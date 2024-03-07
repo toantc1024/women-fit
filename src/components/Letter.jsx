@@ -17,7 +17,7 @@ export const emojis = [
   "👩‍✈️",
 ];
 
-const Letter = ({ showSection }) => {
+const Letter = () => {
   const fx = (x) => {
     return (-1 / 2500) * x * x + (1 / 25) * x;
   };

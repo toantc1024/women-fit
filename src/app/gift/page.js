@@ -1,73 +1,59 @@
 "use client";
 
-import { text_gift } from "@/components/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-// Generate random background color
-const possible_colors = ["bg-pink-200", "bg-rose-200", "bg-red-200"];
+export default function Home() {
+  const [countdown, setCountdown] = useState(10);
+  const [background, setBackground] = useState("bg-pink-300");
 
-const random_bg = () =>
-  possible_colors[Math.floor(Math.random() * possible_colors.length)];
+  const [showEnding, setShowEnding] = useState(false);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (countdown === 0) {
+        setShowEnding(true);
+        return clearInterval(interval);
+      } else {
+        setCountdown(countdown - 1);
+      }
+      // Set background to random color
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [countdown]);
 
-const emojis = [
-  "🎁",
-  "🎈",
-  "🌷",
-  "🌹",
-  "🌺",
-  "🌸",
-  "🌼",
-  "🌻",
-  "🍄",
-  "🌰",
-  "👒",
-];
+  const colors = [
+    "bg-pink-50",
+    "bg-pink-100",
+    "bg-pink-200",
+    "bg-pink-300",
+    "bg-pink-400",
+    "bg-pink-500",
+    "bg-pink-600",
+    "bg-pink-700",
+    "bg-pink-800",
+    "bg-pink-900",
+    "bg-pink-900",
+    "bg-pink-900",
+  ];
 
-const INITIAL_GIFT_LIST = text_gift.map((text, i) => ({
-  text: text,
-  bg: random_bg(),
-  emoji: emojis[i % emojis.length],
-  is_open: false,
-}));
-
-export default function Gift() {
-  const [giftList, setGiftList] = useState(INITIAL_GIFT_LIST);
   return (
-    <div className="w-full min-h-screen py-24 bg-white">
-      <dialog id="my_modal_2" className="modal">
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+    <div
+      className={`h-screen flex items-center justify-center ${colors[countdown]} absolute top-0 bottom-0 z-[9999] w-full`}
+    >
+      {countdown}
+      <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
+        <div className="flex flex-col p-2 rounded-box">
+          {showEnding ? (
+            <div className="absolute top-0 bottom-0 left-0 bg-pink-400  right-0 z-[9999] flex items-center justify-center">
+              <span className="text-9xl font-bold text-white ">
+                LÀ CON GÁI <br /> THẬT TUYỆT 🎉
+              </span>
+            </div>
+          ) : (
+            <span className={`countdown text-white  font-bold text-9xl`}>
+              <span style={{ "--value": countdown }}></span>
+            </span>
+          )}
         </div>
-        <form method="dialog" className="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
-      <div className="flex flex-wrap gap-4 items-center justify-center">
-        {giftList.map((_, i) => (
-          <div
-            onClick={() => {
-              if (giftList[i].is_open) {
-                return;
-              }
-
-              const newGiftList = [...giftList];
-              newGiftList[i].is_open = !newGiftList[i].is_open;
-              setGiftList(newGiftList);
-              document.getElementById("my_modal_2").showModal();
-              // Close all other gifts
-
-              setGiftList(newGiftList);
-            }}
-            className={`w-40 ${
-              giftList[i].is_open
-                ? "bg-white"
-                : "bg-pink-200 hover:bg-pink-300 "
-            }  hover:scale-[1.05] active:scale-[0.9] transition-all ease-in-out duration-200  h-40 rounded-xl shadow-pink-300 shadow-lg cursor-pointer flex items-center justify-center text-[4rem]`}
-          >
-            {emojis[i % emojis.length]}
-          </div>
-        ))}
       </div>
     </div>
   );
