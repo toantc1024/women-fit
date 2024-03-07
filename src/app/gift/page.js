@@ -1,5 +1,6 @@
 "use client";
 
+import { text_gift } from "@/components/constants";
 import { useState } from "react";
 
 // Generate random background color
@@ -22,20 +23,8 @@ const emojis = [
   "👒",
 ];
 
-const INITIAL_GIFT_LIST = [
-  {
-    id: "1",
-    name: "Gift 1",
-    description: "Gift 1 description",
-  },
-  {
-    id: "2",
-    name: "Gift 2",
-    description: "Gift 2 description",
-  },
-    
-].map((gift, i) => ({
-  ...gift,
+const INITIAL_GIFT_LIST = text_gift.map((text, i) => ({
+  text: text,
   bg: random_bg(),
   emoji: emojis[i % emojis.length],
   is_open: false,
@@ -45,6 +34,15 @@ export default function Gift() {
   const [giftList, setGiftList] = useState(INITIAL_GIFT_LIST);
   return (
     <div className="w-full min-h-screen py-24 bg-white">
+      <dialog id="my_modal_2" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">Press ESC key or click outside to close</p>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
       <div className="flex flex-wrap gap-4 items-center justify-center">
         {giftList.map((_, i) => (
           <div
@@ -52,10 +50,11 @@ export default function Gift() {
               if (giftList[i].is_open) {
                 return;
               }
+
               const newGiftList = [...giftList];
               newGiftList[i].is_open = !newGiftList[i].is_open;
               setGiftList(newGiftList);
-
+              document.getElementById("my_modal_2").showModal();
               // Close all other gifts
 
               setGiftList(newGiftList);
