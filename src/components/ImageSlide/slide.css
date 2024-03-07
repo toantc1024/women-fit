@@ -14,9 +14,9 @@
 .gallery_line {
   display: flex;
   flex-direction: column;
-  gap: 1vw;
+  gap: 1vw; 
   height: fit-content;
-  animation: slide 30s linear infinite;
+  animation: slide 40s linear infinite;
 }
 
 .gallery_line:nth-child(2) {

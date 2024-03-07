@@ -1,3 +1,5 @@
+"use client";
+import { scrollIntoView } from "@/utils/scroller";
 import React from "react";
 import { HiArrowDown, HiHeart } from "react-icons/hi";
 
@@ -15,7 +17,14 @@ const Intro = () => {
             <p className="py-6 font-bold  text-6xl text-gray-600 ">
               International <span className="text-pink-400">Women</span> Day
             </p>
-            <button className="btn text-4xl text-pink-400 bg-white hover:bg-white rounded-full">
+            <button
+              onClick={() => {
+                  
+                scrollIntoView("image-slider");
+                
+              }}
+              className="btn text-4xl text-pink-400 bg-white hover:bg-white rounded-full"
+            >
               <HiArrowDown />
             </button>
           </div>
