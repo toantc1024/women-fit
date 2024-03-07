@@ -19,9 +19,22 @@ import IMG_17 from "./17.jpg";
 import IMG_18 from "./18.jpg";
 
 export default [
-  { src: IMG_1, alt: "Nhu Y" },
+  { src: IMG_1, alt: "Như Ý" },
   { src: IMG_2, alt: "Kim Oanh" },
-  { src: IMG_3, alt: "Mai Nhu" },
-  { src: IMG_4, alt: "Mai Nhu" },
-
+  { src: IMG_3, alt: "Mai Như" },
+  { src: IMG_4, alt: "Kim Chung" },
+  { src: IMG_5, alt: "Kim Ngân"}
+  { src: IMG_6, alt: "Ngọc Thương" },
+  { src: IMG_7, alt: "Phương Anh" },
+  { src: IMG_8, alt: "Thùy Trang" },
+  { src: IMG_9, alt: "Văn Ngọc" },
+  { src: IMG_10, alt: "Bình Minh" },
+  { src: IMG_11, alt: "Nhật Vy" },
+  { src: IMG_12, alt: "Diễm Quỳnh" },
+  { src: IMG_13, alt: "Thùy Dương" },
+  { src: IMG_14, alt: "Doanh Doanh" },
+  { src: IMG_15, alt: "Thu Trang" },
+  { src: IMG_16, alt: "Thanh Nhàn" },
+  { src: IMG_17, alt: "Quỳnh Như" },
+  { src: IMG_18, alt: "Tuyết Minh" },
 ];
