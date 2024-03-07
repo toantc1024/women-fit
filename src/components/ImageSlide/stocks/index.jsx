@@ -23,7 +23,7 @@ export default [
   { src: IMG_2, alt: "Kim Oanh" },
   { src: IMG_3, alt: "Mai Như" },
   { src: IMG_4, alt: "Kim Chung" },
-  { src: IMG_5, alt: "Kim Ngân"}
+  { src: IMG_5, alt: "Kim Ngân" },
   { src: IMG_6, alt: "Ngọc Thương" },
   { src: IMG_7, alt: "Phương Anh" },
   { src: IMG_8, alt: "Thùy Trang" },
