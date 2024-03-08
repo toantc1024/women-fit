@@ -1,7 +1,13 @@
+'use client'
+ 
 import React from "react";
+import { useRouter } from 'next/navigation';
+
 
 const Navbar = () => {
-  return (
+const router = useRouter();
+ return (
+
     <div className="fixed z-[9999] navbar bg-pink-400 ">
       <div className="navbar-start">
         <div className="dropdown">
@@ -25,11 +31,11 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
+            <li onClick={() => router.push('/')}>
               <a>Homepage</a>
             </li>
 
-            <li>
+            <li onClick={() => router.push('/gift/page')}>
               <a>Gift</a>
             </li>
           </ul>
