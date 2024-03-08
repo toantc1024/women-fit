@@ -2,8 +2,9 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Letter from "./Letter";
+import { scrollIntoView } from "@/utils/scroller";
 
-const Hero = ({ show }) => {
+const Hero = ({ show, setShowImageSlider }) => {
   return (
     <div
       id="hero-section"
@@ -20,7 +21,12 @@ const Hero = ({ show }) => {
                 1000,
                 "WE ARE BEAUTY 👩‍🎨",
                 800,
-                "WE ARE WOMAN 👩‍💻",
+                "WE ARE WOMEN 👒",
+                1500,
+                () => {
+                  scrollIntoView("image-slider");
+                  setShowImageSlider(true);
+                },
               ]}
             />
           )}

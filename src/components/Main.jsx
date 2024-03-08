@@ -8,7 +8,7 @@ import Loader from "./Loader";
 const Main = () => {
   const [showThankYou, setShowThankyou] = useState(false);
   const [showEnding, setShowEnding] = useState(false);
-
+  const [showImageSlider, setShowImageSlider] = useState(false);
   const [isDoneIntro, setIsDoneIntro] = useState(false);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Main = () => {
     if (showEnding) {
       setTimeout(() => {
         setIsDoneIntro(true);
-      }, 10000);
+      }, 12000);
     }
   }, [showEnding]);
 
@@ -27,9 +27,12 @@ const Main = () => {
         showEnding={showEnding}
         setShowEnding={(value) => setShowEnding(value)}
       />
-      <Intro />
-      <ImageSlide setShowThankyou={(value) => setShowThankyou(value)} />
-      <Hero show={showThankYou} />
+      <Intro setShowThankyou={(value) => setShowThankyou(value)} />
+      <Hero
+        show={showThankYou}
+        setShowImageSlider={(value) => setShowImageSlider(value)}
+      />
+      <ImageSlide showImageSlide={showImageSlider} />
     </div>
   );
 };

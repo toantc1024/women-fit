@@ -14,9 +14,9 @@
 .gallery_line {
   display: flex;
   flex-direction: column;
-  gap: 1vw; 
+  gap: 1vw;
   height: fit-content;
-  animation: slide 40s linear infinite;
+  animation: slide 50s linear infinite;
 }
 
 .gallery_line:nth-child(2) {
@@ -34,7 +34,7 @@
 
 @keyframes slide {
   0% {
-    transform: translatey(0);
+    transform: translatey(5%);
   }
   100% {
     transform: translatey(-50%);

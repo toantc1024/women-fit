@@ -46,6 +46,7 @@ export default function Gift() {
       <div className="flex flex-wrap gap-4 items-center justify-center">
         {giftList.map((_, i) => (
           <div
+            key={i}
             onClick={() => {
               if (giftList[i].is_open) {
                 return;

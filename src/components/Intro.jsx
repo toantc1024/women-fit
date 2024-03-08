@@ -3,7 +3,7 @@ import { scrollIntoView } from "@/utils/scroller";
 import React from "react";
 import { HiArrowDown, HiHeart } from "react-icons/hi";
 
-const Intro = () => {
+const Intro = ({ setShowThankyou }) => {
   return (
     <div className="h-screen ">
       <div className="hero min-h-screen bg-gradient-to-b from-pink-400 to-pink-200 relative">
@@ -19,9 +19,8 @@ const Intro = () => {
             </p>
             <button
               onClick={() => {
-                  
-                scrollIntoView("image-slider");
-                
+                scrollIntoView("hero-section");
+                setShowThankyou(true);
               }}
               className="btn text-4xl text-pink-400 bg-white hover:bg-white rounded-full"
             >

@@ -17,6 +17,7 @@ import IMG_15 from "./15.jpg";
 import IMG_16 from "./16.jpg";
 import IMG_17 from "./17.jpg";
 import IMG_18 from "./18.jpg";
+import IMG_19 from "./19.jpg";
 
 export default [
   { src: IMG_1, alt: "Như Ý" },
@@ -37,4 +38,5 @@ export default [
   { src: IMG_16, alt: "Thanh Nhàn" },
   { src: IMG_17, alt: "Quỳnh Như" },
   { src: IMG_18, alt: "Tuyết Minh" },
+  { src: IMG_19, alt: "Quốc Hưng" },
 ];

@@ -33,6 +33,7 @@ const Letter = () => {
         >
           {[...new Array(111)].map((_, i) => (
             <span
+              key={i}
               className={`flex items-center justify-center text-6xl w-[100px] h-[100px] bg-white rounded-xl shadow-2xl shadow-pink-100 transition-all ease-in-out duration-500 `}
               style={{
                 opacity: i % 2 == 0 ? 0 : fx(i),
