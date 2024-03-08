@@ -75,6 +75,7 @@ const Game = () => {
           innerBorderColor={"white"}
           outerBorderColor={"white"}
           fontSize={20}
+          spinDuration={0.4}
           prizeNumber={prizeNumber}
           data={slot}
           backgroundColors={["#ec4899", "#8b5cf6", "#f43f5e"]}

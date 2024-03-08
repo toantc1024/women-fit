@@ -54,7 +54,6 @@ export default function Loader({ showEnding, setShowEnding, isDoneIntro }) {
           <button
             onClick={() => {
               setDeadlock(false);
-
               document.getElementById("countdown-audio").play();
               // Start playing countdown
             }}
