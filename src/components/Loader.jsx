@@ -13,6 +13,10 @@ export default function Loader({ showEnding, setShowEnding, isDoneIntro }) {
     const interval = setInterval(() => {
       if (countdown === 0) {
         setShowEnding(true);
+        // Set playing MUSIC!!!
+        let audio = document.getElementById("background-music");
+
+        audio.play();
         return clearInterval(interval);
       } else {
         setCountdown(countdown - 1);
@@ -44,15 +48,19 @@ export default function Loader({ showEnding, setShowEnding, isDoneIntro }) {
         isDoneIntro && "hidden"
       } transition-all ease-in-out duration-150 `}
     >
+      <audio id="countdown-audio" className="hidden" src={"./countdown.mp3"} />
       <div className="flex h-full w-full items-center justify-center relative ">
         {deadlock && (
           <button
             onClick={() => {
               setDeadlock(false);
+
+              document.getElementById("countdown-audio").play();
+              // Start playing countdown
             }}
-            className="btn btn-secondary flex items-center justify-center absolute z-[999] p-24 text-8xl"
+            className="btn btn-base flex items-center justify-center absolute h-48 px-24 rounded-full z-[999]  text-8xl"
           >
-            START
+            <span>START</span>
           </button>
         )}
 
@@ -67,19 +75,21 @@ export default function Loader({ showEnding, setShowEnding, isDoneIntro }) {
                 <span className="text-9xl font-bold text-white ">
                   <TypeAnimation
                     sequence={[
+                      "🙄",
+                      2000,
                       "LÀ CON GÁI",
                       900,
                       "LÀ CON GÁI ...",
                       900,
-                      "THẬT TUYỆT 🎉",
+                      "THẬT TUYỆT 😊",
                       1000,
-                      "MỘT MÓN QUÀ NHỎ TỪ FIT 🎉",
+                      "MỘT MÓN QUÀ NHỎ TỪ FIT 💐",
                     ]}
                   />
                 </span>
               </div>
             ) : (
-              <span className={`countdown text-white  font-bold text-9xl`}>
+              <span className={`countdown text-white  font-bold text-[12rem]`}>
                 <span style={{ "--value": countdown }}></span>
               </span>
             )}

@@ -19,7 +19,7 @@ const flower_emojis = [
   "🍄",
   "🌰",
 ];
-const ImageSlide = ({ ref, showImageSlide = true, setShowThankyou }) => {
+const ImageSlide = ({ showImageSlide, ref, setShowThankyou }) => {
   return (
     <div id="image-slider" className="w-full bg-pink-200 flex-col lg:flex-row ">
       <div
@@ -48,23 +48,51 @@ const ImageSlide = ({ ref, showImageSlide = true, setShowThankyou }) => {
 
             <div class="gallery ">
               {/* Split images into 3 parts */}
-              {[0, 5, 11].map((item) => {
-                return (
-                  <div class="gallery_line">
-                    {images.slice(item, item + 6).map(({ src, alt }, i) => (
-                      <div className="relative">
-                        <span className="absolute top-0 bg-white top-0 rounded-xl text-sm p-2 m-4 font-bold">
-                          {alt}{" "}
-                          {i == 1
-                            ? "🌻"
-                            : flower_emojis[i % flower_emojis.length]}
-                        </span>
-                        <Image src={src} />
-                      </div>
-                    ))}
-                  </div>
-                );
-              })}
+              <div className="gallery_line">
+                {images.slice(0, 6).map(({ src, alt }, i) => (
+                  <>
+                    <div className="relative">
+                      <span className="absolute top-0 bg-white top-0 rounded-xl text-sm p-2 m-4 font-bold">
+                        {alt}{" "}
+                        {i == 1
+                          ? "🌻"
+                          : flower_emojis[i % flower_emojis.length]}
+                      </span>
+                      <Image alt={alt} width={"200"} src={src} />
+                    </div>
+                  </>
+                ))}
+              </div>
+              <div className="gallery_line">
+                {images.slice(6, 12).map(({ src, alt }, i) => (
+                  <>
+                    <div className="relative">
+                      <span className="absolute top-0 bg-white top-0 rounded-xl text-sm p-2 m-4 font-bold">
+                        {alt}{" "}
+                        {i == 1
+                          ? "🌻"
+                          : flower_emojis[i % flower_emojis.length]}
+                      </span>
+                      <Image width={"200"} src={src} />
+                    </div>
+                  </>
+                ))}
+              </div>
+              <div className="gallery_line">
+                {images.slice(13, 19).map(({ src, alt }, i) => (
+                  <>
+                    <div className="relative">
+                      <span className="absolute top-0 bg-white top-0 rounded-xl text-sm p-2 m-4 font-bold">
+                        {alt}{" "}
+                        {i == 1
+                          ? "🌻"
+                          : flower_emojis[i % flower_emojis.length]}
+                      </span>
+                      <Image width={"200"} src={src} />
+                    </div>
+                  </>
+                ))}
+              </div>
             </div>
           </Fragment>
         )}

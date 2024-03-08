@@ -18,4 +18,5 @@ export const text_gift = [
   "Bạn ơi, hãy sống với vẻ đẹp của mình và nở rộ như một bông hoa nha",
   "Tụi mình khỏi phải tới New York vẫn được gặp quá trời nữ thần nè",
   "Đôi mắt bạn không phải để khóc, mà hãy để nó ghi sâu những hình ảnh mà chúng tôi săn sóc cho bạn",
+  "Nụ cười của bạn làm trái tim tụi mình tan chảy rồi đó",
 ];
